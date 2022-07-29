@@ -1,0 +1,62 @@
+
+.card 
+{
+
+ height: 50px;
+  width: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #ffc728;
+  color: #000;
+  font: "Neue Helvetica";
+  font-weight: bold;
+
+  text-align: center;
+}
+
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: green;
+  color: white;
+  text-align: center;
+  font: "Neue Helvetica";
+font-weight: bold;
+  transform: rotateX(180deg)
+}
+
+.g-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: rgb(27, 31, 36);
+    color: white;
+    text-align: center;
+    transform: rotateX(180deg)
+  }
+
+.flipCard 
+{
+    transform: rotateX(180deg);
+}
+
+.lettersrow 
+{
+    transition: all 0.8s ease;
+}
+.animateCenter 
+{
+    transform: translateX(25px);
+}
