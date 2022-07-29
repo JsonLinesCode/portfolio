@@ -778,8 +778,8 @@ video {
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  background-color: #ffc728;
-  color: #000;
+  background-color: #3a3a3c;
+  color: white;
   font: "Neue Helvetica";
   font-weight: bold;
   text-align: center;
@@ -791,7 +791,7 @@ video {
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  background-color: green;
+  background-color: #538d4e;
   color: white;
   text-align: center;
   font: "Neue Helvetica";
