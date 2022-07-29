@@ -648,6 +648,10 @@ video {
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -802,9 +806,8 @@ video {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   background-color: rgb(27, 31, 36);
-  color: white;
   text-align: center;
-  transform: rotateX(180deg)
+  transform: rotateX(180deg);
 }
 
 .flipCard 
