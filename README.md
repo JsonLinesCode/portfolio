@@ -1,0 +1,1 @@
+Run `npx tailwindcss -i ./style.css -o ./dist/output.css --watch`
