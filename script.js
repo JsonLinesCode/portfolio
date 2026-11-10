@@ -1,37 +1,98 @@
-(function (window, document, undefined) {
-  // code that should be taken care of right away
+(function (window, document) {
+  var isAnimating = false;
 
-  window.onload = init;
+  function runWordleSequence() {
+    if (isAnimating) return;
+    isAnimating = true;
 
-  function init() {
+    var rows = document.getElementsByClassName("lettersrow");
+    for (var r = 0; r < rows.length; r++) {
+      rows[r].classList.remove("animateCenter");
+    }
+    for (var k = 1; k <= 10; k++) {
+      var el = document.getElementById("l" + k);
+      if (el) el.classList.remove("flipCard");
+    }
+
     var i = 1;
-    myLoop();
     function myLoop() {
-      //  create a loop function
       setTimeout(function () {
-        //  call a 3s setTimeout when the loop is called
-        flipCard(i.toString());
-        i++; //  increment the counter
-        if (i < 11) {  //  if the counter < 10, call the loop function
-          myLoop(); //  ..  again which will trigger another
-        } 
-        else {
-            var cusid_ele = document.getElementsByClassName("lettersrow");
-
-            for (var j = 0; j < cusid_ele.length; ++j) {
-              var item = cusid_ele[j];
-              item.classList.toggle("animateCenter");;
-            }
+        var card = document.getElementById("l" + i.toString());
+        if (card) {
+          card.classList.add("flipCard");
+        }
+        i++;
+        if (i < 11) {
+          myLoop();
+        } else {
+          for (var j = 0; j < rows.length; ++j) {
+            rows[j].classList.add("animateCenter");
+          }
+          setTimeout(function () {
+            isAnimating = false;
+          }, 800);
         }
       }, 250);
     }
 
-   
-
-    function flipCard(id) {
-      console.log(id);
-      const card = document.getElementById("l" + id);
-      card.classList.toggle("flipCard");
-    }
+    myLoop();
   }
-})(window, document, undefined);
+
+  function initFilters() {
+    var filterBtns = document.querySelectorAll(".filter-btn");
+    var cards = document.querySelectorAll(".project-card");
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var category = btn.getAttribute("data-filter");
+
+        filterBtns.forEach(function (b) {
+          b.classList.remove("active");
+        });
+        btn.classList.add("active");
+
+        cards.forEach(function (card) {
+          var cardCats = card.getAttribute("data-category") || "";
+          if (category === "all" || cardCats.indexOf(category) !== -1) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", function () {
+    runWordleSequence();
+    initFilters();
+
+    var replayBtn = document.getElementById("replay-wordle");
+    var wordleBoard = document.getElementById("wordle-board");
+
+    function triggerReplay() {
+      if (isAnimating) return;
+      var rows = document.getElementsByClassName("lettersrow");
+      for (var r = 0; r < rows.length; r++) {
+        rows[r].classList.remove("animateCenter");
+      }
+      for (var k = 1; k <= 10; k++) {
+        var el = document.getElementById("l" + k);
+        if (el) el.classList.remove("flipCard");
+      }
+      setTimeout(function () {
+        runWordleSequence();
+      }, 450);
+    }
+
+    if (replayBtn) {
+      replayBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        triggerReplay();
+      });
+    }
+    if (wordleBoard) {
+      wordleBoard.addEventListener("click", triggerReplay);
+    }
+  });
+})(window, document);

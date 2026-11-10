@@ -1,137 +1,617 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <script type="text/javascript" src="script.js"></script>
-    <link href="./dist/output.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="description" content="A little about me">
-    <meta name="author" content="Josselin R.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josselin Robert (JsonLines) — Data Science, AI &amp; Systems Engineering</title>
+  <meta name="description" content="Academic and engineering portfolio of Josselin Robert (JsonLines) — M.Sc. in Data Science at École Polytechnique (IP Paris) &amp; Engineering Student at Télécom SudParis.">
+  <meta name="author" content="Josselin Robert">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jsonlines.fr/">
+  <meta property="og:title" content="Josselin Robert (JsonLines) — AI, Data Science &amp; Systems Portfolio">
+  <meta property="og:description" content="M.Sc. in Data Science at École Polytechnique &amp; Graduate Engineering Student at Télécom SudParis. Machine Learning, Computer Vision, and Production Systems.">
+  <meta property="og:image" content="https://jsonlines.fr/src/avatar.png">
+
+  <!-- Classic Academic Serif & Monospace Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./script.js" defer></script>
 </head>
 
 <body>
-    <div class="overflow-hidden bg-gray-900 px-4 flex flex-col items-center space-y-3 w-100 justify-center h-screen">
-        <div
-            class="overflow-hidden max-w-md w-full px-9 py-4  bg-gray-800 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="flex flex-col items-center pb-10 space-y-4">
-                <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="src/avatar.png" alt="JsonLines image" />
-                <div class="flex gap-2 lettersrow">
-                    <span class="grid place-items-center card" id="l1">
-                        <div class="grid place-items-center   front">
-                            <h1>J</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>J</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l2">
-                        <div class="grid place-items-center   front">
-                            <h1>S</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>O</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l3">
-                        <div class="grid place-items-center   front">
-                            <h1>O</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>S</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l4">
-                        <div class="grid place-items-center   front">
-                            <h1>N</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>S</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l5">
-                        <div class="grid place-items-center   front">
-                            <h1>_</h1>
-                        </div>
-                        <div class="grid place-items-center bg-gray-800 dark:bg-gray-800  g-back">
-                            <h1></h1>
-                        </div>
-                    </span>
-                </div>
-                <div class="flex gap-2 mt-2 lettersrow">
 
-                    <span class="grid place-items-center  card" id="l6">
-                        <div class="grid place-items-center   front">
-                            <h1>L</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>E</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l7">
-                        <div class="grid place-items-center   front">
-                            <h1>I</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>L</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l8">
-                        <div class="grid place-items-center   front">
-                            <h1>N</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>I</h1>
-                        </div>
-                    </span><span class="grid place-items-center  card" id="l9">
-                        <div class="grid place-items-center   front">
-                            <h1>E</h1>
-                        </div>
-                        <div class="grid place-items-center back">
-                            <h1>N</h1>
-                        </div>
-                    </span>
-                    <span class="grid place-items-center  card" id="l10">
-                        <div class="grid place-items-center   front">
-                            <h1>S</h1>
-                        </div>
-                        <div class="grid place-items-center bg-gray-800 dark:bg-gray-800 g-back">
-                            <h1></h1>
-                        </div>
-                    </span>
-                </div>
-
-                <h5 class="mb-1 text-xl font-medium text-gray-900 text-center dark:text-white">I am Josselin (aka
-                    JsonLines)</h5>
-                <span class="text-sm text-gray-500 dark:text-gray-400">I am a young French student passionate about
-                    coding, music and visual creation. I like maths as well.</span>
-                <div class="flex mt-4 space-x-3 lg:mt-6">
-                    <a href="https://www.nytimes.com/games/wordle/index.html"
-                        class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Wordle</a>
-                    <a href="mailto:jsonlines@ynotes.fr"
-                        class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send
-                        me a mail</a>
-
-                </div>
-            </div>
-        </div>
-        <div
-            class="flex flex-col space-y-3 max-w-md w-full px-9 py-4  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <span class="space-y-3 text-center text-sm text-gray-500 dark:text-gray-400 ">
-                I've participated to the <b>following projects :</b>
-            </span>
-            <div class="flex flex-row justify-center space-x-3">
-                <a href="https://ynotes.fr">
-                    <img class="w-24 h-24 rounded-lg" src="src/yn_icon.png" alt="JsonLines image">
-                </a>
-                <a href="https://apollo.jsonlines.fr">
-                    <img class="w-24 h-24 rounded-lg" src="src/apollo_icon.png" alt="JsonLines image">
-                </a>
-            </div>
-
-
-        </div>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">jsonlines.fr // Josselin Robert</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#overview">1. Overview</a></li>
+          <li><a href="#projects">2. Selected Projects</a></li>
+          <li><a href="#trajectory">3. Academic &amp; Industry Trajectory</a></li>
+          <li><a href="#competencies">4. Technical Scope</a></li>
+          <li><a href="https://github.com/JsonLinesCode" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+
+    <!-- SECTION 1: HERO & WORDLE ANIMATION -->
+    <section id="overview" class="hero-grid">
+      <!-- Signature Wordle 3D Flip Stage -->
+      <div class="wordle-stage">
+        <img class="avatar-img" src="src/avatar.png" alt="Josselin Robert (JsonLines)">
+
+        <div id="wordle-board" class="wordle-board" title="Click to replay Wordle flip animation">
+          <div class="lettersrow">
+            <span class="card" id="l1">
+              <div class="front"><h1>J</h1></div>
+              <div class="back"><h1>J</h1></div>
+            </span>
+            <span class="card" id="l2">
+              <div class="front"><h1>S</h1></div>
+              <div class="back"><h1>O</h1></div>
+            </span>
+            <span class="card" id="l3">
+              <div class="front"><h1>O</h1></div>
+              <div class="back"><h1>S</h1></div>
+            </span>
+            <span class="card" id="l4">
+              <div class="front"><h1>N</h1></div>
+              <div class="back"><h1>S</h1></div>
+            </span>
+            <span class="card" id="l5">
+              <div class="front"><h1>_</h1></div>
+              <div class="g-back"><h1></h1></div>
+            </span>
+          </div>
+
+          <div class="lettersrow">
+            <span class="card" id="l6">
+              <div class="front"><h1>L</h1></div>
+              <div class="back"><h1>E</h1></div>
+            </span>
+            <span class="card" id="l7">
+              <div class="front"><h1>I</h1></div>
+              <div class="back"><h1>L</h1></div>
+            </span>
+            <span class="card" id="l8">
+              <div class="front"><h1>N</h1></div>
+              <div class="back"><h1>I</h1></div>
+            </span>
+            <span class="card" id="l9">
+              <div class="front"><h1>E</h1></div>
+              <div class="back"><h1>N</h1></div>
+            </span>
+            <span class="card" id="l10">
+              <div class="front"><h1>S</h1></div>
+              <div class="g-back"><h1></h1></div>
+            </span>
+          </div>
+        </div>
+
+        <div class="wordle-caption">
+          <span>JSON_LINES &rarr; JOSSELIN</span>
+          <button type="button" id="replay-wordle" class="replay-btn">Replay Flip</button>
+        </div>
+      </div>
+
+      <!-- Academic & Engineering Bio -->
+      <div class="hero-content">
+        <div>
+          <div class="hero-eyebrow">§ 1. Identity &amp; Research Profile</div>
+          <h1 class="hero-name">
+            Josselin Robert <span class="hero-aka">(aka JsonLines)</span>
+          </h1>
+          <div class="hero-affiliation">
+            <strong>M.Sc. in Data Science (M2DS)</strong> — École Polytechnique (Institut Polytechnique de Paris)<br>
+            <strong>Diplôme d'Ingénieur (Mathematics &amp; Computer Science)</strong> — Télécom SudParis
+          </div>
+          <p class="hero-bio">
+            Graduate researcher and systems engineer specializing in <strong>machine learning theory</strong>, <strong>computer vision &amp; perception</strong>, <strong>foundation model pipelines</strong>, and <strong>high-reliability software architecture</strong>. Grounded in three years of French <em>Classes Préparatoires</em> (MPSI/MP) in pure mathematics and theoretical physics, I enjoy bridging mathematical optimization with end-to-end production systems—from self-healing LLM automation frameworks and industrial OCR pipelines to open-source mobile applications serving over 10,000 active users.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="./cv.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Curriculum Vitae (PDF)
+          </a>
+          <a href="https://github.com/JsonLinesCode" target="_blank" rel="noopener" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub (@JsonLinesCode)
+          </a>
+          <a href="https://www.linkedin.com/in/josselin-robert" target="_blank" rel="noopener" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:josselin.robert@polytechnique.edu" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            josselin.robert@polytechnique.edu
+          </a>
+          <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" rel="noopener" class="btn">
+            NYT Wordle
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SELECTED PROJECTS & OPEN SOURCE -->
+    <section id="projects" class="section-block">
+      <div class="section-header">
+        <h2 class="section-title"><span class="section-num">§ 2.</span>Selected Engineering &amp; Research Projects</h2>
+        <span class="section-subtitle">AI Systems &bull; Computer Vision &bull; Open-Source Software</span>
+      </div>
+
+      <!-- Category Filter Controls -->
+      <div class="filter-bar">
+        <button type="button" class="filter-btn active" data-filter="all">All Projects (10)</button>
+        <button type="button" class="filter-btn" data-filter="ai">AI, Vision &amp; Machine Learning (6)</button>
+        <button type="button" class="filter-btn" data-filter="systems">Production Systems &amp; Open Source (4)</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- 2.1 Sentinel -->
+        <article class="project-card" data-category="ai systems">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.1 // 2026</span>
+              <span class="project-cat-badge">LLM Agents &amp; MCP</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Sentinel — Self-Healing LLM Puppeteer MCP</h3>
+            </div>
+            <div class="project-subtitle">Autonomous Browser Recording, Schema Synthesis &amp; Distributed Scraping</div>
+            <p class="project-desc">
+              A smart Puppeteer automation and Model Context Protocol (MCP) library that records live user browser interactions and leverages LLMs to compile recordings into generalizable, self-repairing YAML/JSON extraction schemas.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>LLM Schema Generalization:</strong> Translates raw DOM trace recordings into structured extraction rules using generative AI (<code>@google/genai</code>).</li>
+              <li><strong>Self-Healing Selector Drift:</strong> Automatically detects broken DOM selectors when target websites update and re-synthesizes extraction paths to maintain field coverage.</li>
+              <li><strong>Distributed Worker Ready:</strong> Packaged as a modular TypeScript CLI and library for multi-node scraping clusters.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Puppeteer</span>
+              <span class="tech-tag">MCP</span>
+              <span class="tech-tag">LLM Synthesis</span>
+              <span class="tech-tag">Docker</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode" target="_blank" rel="noopener" class="project-link">GitHub &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.2 Travel Manager (Hackathon X-IA 2026) -->
+        <article class="project-card" data-category="ai">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.2 // 2026</span>
+              <span class="project-cat-badge">Multi-Agent Systems</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Travel Manager — Hackathon X-IA 2026</h3>
+            </div>
+            <div class="project-subtitle">Agentic B2B Travel Orchestration &amp; Constraint Satisfaction</div>
+            <p class="project-desc">
+              Built during the École Polytechnique AI Hackathon (Sept 2026). Coordinates multi-origin business travel across distributed teams while jointly satisfying calendar availability, corporate policy, and strict budget caps.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Structured LLM Extraction &amp; Live Search:</strong> Integrates OpenAI structured outputs with live Jinko travel inventory and quote APIs.</li>
+              <li><strong>Multi-Calendar &amp; Budget Optimization:</strong> Parses employee <code>.ics</code> schedules across European hubs (Paris, London, Madrid) to compute optimal arrival windows under budget constraints.</li>
+              <li><strong>Automated Disruption Recovery:</strong> Re-plans itineraries and manages expense receipt validation upon transit delays.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">OpenAI API</span>
+              <span class="tech-tag">Agentic Workflows</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">pnpm</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/hackathon_x_ia_2026" target="_blank" rel="noopener" class="project-link">Repository &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.3 Reactif -->
+        <article class="project-card" data-category="systems">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.3 // 2025 – Present</span>
+              <span class="project-cat-badge">Critical Medical Systems</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Reactif — Emergency Resuscitation Cognitive Aid</h3>
+            </div>
+            <div class="project-subtitle">Real-Time Clinical Timekeeper for Cardiopulmonary Resuscitation (CPR)</div>
+            <p class="project-desc">
+              Active maintainer and lead engineer of a mission-critical mobile platform used by emergency medical teams (SAMU, SMUR, intensive care) to guide life-support protocols during cardiac arrest interventions.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Deterministic Zero-Latency State Engine:</strong> Tracks chest compression cycles, adrenaline/amiodarone administration intervals, and rhythm checks with sub-millisecond precision.</li>
+              <li><strong>100% Offline-First Reliability:</strong> Engineered for hospital dead-zones and mobile ambulances with local persistent event logging and automated store CI/CD pipelines.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Mobile Architecture</span>
+              <span class="tech-tag">Offline-First</span>
+              <span class="tech-tag">Real-Time Telemetry</span>
+              <span class="tech-tag">CI/CD</span>
+            </div>
+            <div class="project-links">
+              <a href="https://reactif.app" target="_blank" rel="noopener" class="project-link">reactif.app &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.4 yNotes -->
+        <article class="project-card" data-category="systems">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.4 // 2020 – 2023</span>
+              <span class="project-cat-badge">Open Source &bull; &gt;10k Users</span>
+            </div>
+            <div class="project-header-row">
+              <img src="src/yn_icon.png" alt="yNotes Icon" class="project-icon">
+              <h3 class="project-title">yNotes — Cross-Platform Academic Client</h3>
+            </div>
+            <div class="project-subtitle">Founder &amp; Lead Architect (&gt;10,000 Downloads on iOS &amp; Android)</div>
+            <p class="project-desc">
+              Founded and spearheaded an open-source mobile student life and grade-tracking application unifying closed French academic portals (Pronote, École Directe) into a fast, offline-capable mobile experience.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Protocol Reverse-Engineering:</strong> Disassembled Android APK bytecode and inspected encrypted network traffic to port the <code>pronotepy</code> cryptographic handshake to pure Dart.</li>
+              <li><strong>Team &amp; Scale:</strong> Coordinated a team of 7 open-source contributors, implementing local NoSQL persistence (<code>Hive</code> / <code>Isar</code>) and <code>Rive</code> vector animations.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Reverse Engineering</span>
+              <span class="tech-tag">Hive / Isar</span>
+            </div>
+            <div class="project-links">
+              <a href="https://archive.ynotes.fr" target="_blank" rel="noopener" class="project-link">archive.ynotes.fr &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.5 Better Group Zero-Shot Semantic Engine -->
+        <article class="project-card" data-category="ai">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.5 // 2026</span>
+              <span class="project-cat-badge">NLP &amp; Transformers</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Zero-Shot Semantic Recommendation Engine</h3>
+            </div>
+            <div class="project-subtitle">Production Transformer Pipeline at Better Group (Paris)</div>
+            <p class="project-desc">
+              End-to-end semantic matching pipeline connecting unstructured live news articles to relevant social impact initiatives without requiring manually labeled training corpora.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>NLI Cross-Encoder Formulation:</strong> Deployed Hugging Face Transformers using Natural Language Inference hypothesis-premise scoring (`&gt;92%` classification precision).</li>
+              <li><strong>Low-Latency Serving:</strong> Architected an asynchronous Python microservice with active vector caching (`-45%` inference latency) powering an embeddable client web widget.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Hugging Face</span>
+              <span class="tech-tag">Zero-Shot NLI</span>
+              <span class="tech-tag">FastAPI</span>
+            </div>
+            <div class="project-links">
+              <span class="project-index">Production Deployment</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.6 Safran OCR Pipeline & GitLab SPFx WebPart -->
+        <article class="project-card" data-category="ai systems">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.6 // 2025</span>
+              <span class="project-cat-badge">Document AI &amp; Enterprise</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Industrial OCR Pipeline &amp; Safran Git WebPart</h3>
+            </div>
+            <div class="project-subtitle">Data Engineering Internship at Safran Landing Systems</div>
+            <p class="project-desc">
+              Automated visual document extraction workflows and developed enterprise developer tooling for the Data Department at Safran Landing Systems (Vélizy-Villacoublay).
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Optical Character Recognition (OCR):</strong> Built a Python + OCR ingestion pipeline to extract, validate, and structure fields from aeronautical maintenance and inspection logs.</li>
+              <li><strong>Safran Data Factory WebPart:</strong> Engineered a custom TypeScript SharePoint Framework (SPFx) component parsing live GitLab release changelogs via the <code>gitbeaker</code> API.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OCR</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">SPFx</span>
+              <span class="tech-tag">GitLab API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/safran-git-webpart" target="_blank" rel="noopener" class="project-link">Repository &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.7 TensorTonic & M2DS Mathematical ML -->
+        <article class="project-card" data-category="ai">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.7 // 2026</span>
+              <span class="project-cat-badge">Mathematical ML</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">TensorTonic &amp; M2DS ML Implementations</h3>
+            </div>
+            <div class="project-subtitle">From-Scratch Tensor Primitives &amp; Custom Estimators (École Polytechnique)</div>
+            <p class="project-desc">
+              Collection of ground-up algorithmic implementations in NumPy, PyTorch, and scikit-learn developed alongside the M.Sc. in Data Science (M2DS) curriculum at École Polytechnique.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>Custom Estimator API:</strong> Engineered compliant <code>BaseEstimator</code> and <code>TransformerMixin</code> pipelines, cross-validation harnesses, and vectorized tensor operations.</li>
+              <li><strong>Optimization &amp; Learning Theory:</strong> Proximal gradient descent (ISTA/FISTA), empirical risk minimization, and numerical stability benchmarks.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">Convex Optimization</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/TensorTonic-Solutions" target="_blank" rel="noopener" class="project-link">TensorTonic &rarr;</a>
+              <a href="https://github.com/JsonLinesCode/2026-assignment-sklearn" target="_blank" rel="noopener" class="project-link">Sklearn API &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.8 Computer Vision, Thermal Imaging & Autonomous Robotics -->
+        <article class="project-card" data-category="ai">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.8 // 2022 – 2025</span>
+              <span class="project-cat-badge">Vision, Signal &amp; Robotics</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Thermal Vision, Hough Detection &amp; Autonomous Robotics</h3>
+            </div>
+            <div class="project-subtitle">IR Colorimetry, QPSK Modulation &amp; French Robotics Cup (InTECH)</div>
+            <p class="project-desc">
+              Applied perception, signal processing, and embedded C++ control projects spanning undergraduate research (TIPE) and competitive mobile robotics at Télécom SudParis.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>InTECH Robotics Cup:</strong> Programmed C++ sensor fusion and obstacle avoidance loops executing under deterministic sub-10 ms hardware deadlines.</li>
+              <li><strong>IR Analyzer &amp; TIPE Vision:</strong> Automated grid colorimetry on thermal infrared imagery (<code>PIL</code>/<code>Matplotlib</code>), Hough-transform geometric detection, and QPSK modulation simulations.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV / PIL</span>
+              <span class="tech-tag">Signal Processing</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/ir_analyzer" target="_blank" rel="noopener" class="project-link">ir_analyzer &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.9 Academic Protocol SDKs (pronote-qrcode-api & ecoledirecte.js) -->
+        <article class="project-card" data-category="systems">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.9 // 2021 – 2022</span>
+              <span class="project-cat-badge">Cryptography &amp; SDKs</span>
+            </div>
+            <div class="project-header-row">
+              <h3 class="project-title">Pronote QR-Auth Decoder &amp; ÉcoleDirecte.js</h3>
+            </div>
+            <div class="project-subtitle">Open-Source Authentication &amp; API Client Libraries</div>
+            <p class="project-desc">
+              Standalone JavaScript and TypeScript libraries exposing clean, typed programmatic interfaces and cryptographic deciphering routines for French educational platforms.
+            </p>
+            <ul class="project-highlights">
+              <li><strong><code>pronote-qrcode-api</code>:</strong> Reverse-engineered Cordova mobile authentication flows and AES QR-code payload deciphering with automated Puppeteer verification.</li>
+              <li><strong><code>ecoledirecte.js</code>:</strong> Typed TypeScript SDK for École Directe's private REST endpoints with unit test coverage.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">AES Cryptography</span>
+              <span class="tech-tag">Puppeteer</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/pronote-qrcode-api" target="_blank" rel="noopener" class="project-link">pronote-qr &rarr;</a>
+              <a href="https://github.com/JsonLinesCode/ecoledirecte.js" target="_blank" rel="noopener" class="project-link">ecoledirecte.js &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2.10 Flutter 3D, High-Availability Systems & Open Source -->
+        <article class="project-card" data-category="systems">
+          <div class="project-card-top">
+            <div class="project-meta">
+              <span class="project-index">2.10 // 2021 – 2026</span>
+              <span class="project-cat-badge">3D Rendering &amp; Infra</span>
+            </div>
+            <div class="project-header-row">
+              <img src="src/apollo_icon.png" alt="Apollo / Side Projects Icon" class="project-icon">
+              <h3 class="project-title">Flutter 3D Rendering, NET4255 Cluster &amp; Tooling</h3>
+            </div>
+            <div class="project-subtitle">Open-Source Packages, High-Availability Docker Infra &amp; Side Projects</div>
+            <p class="project-desc">
+              Contributions to the Flutter package ecosystem, distributed systems architecture at Télécom SudParis, and cross-platform productivity applications.
+            </p>
+            <ul class="project-highlights">
+              <li><strong><code>flutter_3d_controller</code> &amp; UI Packages:</strong> Interactive 3D model rendering (<code>GLB</code>, <code>GLTF</code>, <code>OBJ</code>, <code>FBX</code>) with camera/texture controls, plus <code>rounded_background_text</code> and <code>prep_time_tracker</code> (CMake/Flutter).</li>
+              <li><strong><code>NET4255</code> High-Availability Web Cluster:</strong> Containerized multi-node Flask + Nginx load-balanced infrastructure running on Alpine Linux Docker images.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Flutter / Dart</span>
+              <span class="tech-tag">3D GLTF/OBJ</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Nginx</span>
+              <span class="tech-tag">CMake</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/flutter_3d_controller" target="_blank" rel="noopener" class="project-link">flutter_3d &rarr;</a>
+              <a href="https://github.com/JsonLinesCode/NET4255" target="_blank" rel="noopener" class="project-link">NET4255 &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: ACADEMIC & PROFESSIONAL TRAJECTORY -->
+    <section id="trajectory" class="section-block">
+      <div class="section-header">
+        <h2 class="section-title"><span class="section-num">§ 3.</span>Academic &amp; Professional Trajectory</h2>
+        <span class="section-subtitle">Education &bull; Industry Internships &bull; Leadership</span>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="timeline-date">09/2026 – 10/2027</div>
+          <div>
+            <div class="timeline-role">Master of Science in Data Science (M2DS)</div>
+            <div class="timeline-org">École Polytechnique (Institut Polytechnique de Paris) — Palaiseau, France</div>
+            <p class="timeline-details">
+              Research-intensive graduate specialization in mathematical learning theory (<code>APM_5DS27_TP</code>), continuous &amp; convex optimization (<code>APM_53677_EP</code>), deep learning for computer vision (<code>APM_5DA12_TP</code>), natural language processing &amp; LLMs (<code>MDC_53607_EP</code>), audio/signal AI (<code>APM_5DS20_TP</code>), and real-time data stream processing (<code>MDC_53671_EP</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">09/2024 – 10/2027</div>
+          <div>
+            <div class="timeline-role">Diplôme d'Ingénieur (M.Sc. in Engineering — Double Major Math &amp; CS)</div>
+            <div class="timeline-org">Télécom SudParis (Institut Polytechnique de Paris) — Évry-Courcouronnes, France</div>
+            <p class="timeline-details">
+              French Grande École curriculum in computer architecture, operating systems, distributed networks, statistical modeling, and optimization. Year 2 GPA: <strong>15.57/20 (3.8/4.0, Grade A/A+)</strong>. Finalist in the <em>Concours Entreprendre</em> Startup Competition (<strong>Project Ozy</strong>, AR interactive manual, Nov 2025) &amp; President of <strong>Club Xtreme</strong> (organized Bike&amp;Run 2026).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2026</div>
+          <div>
+            <div class="timeline-role">Full-Stack &amp; AI Engineering Intern</div>
+            <div class="timeline-org">Better Group — Paris, France</div>
+            <p class="timeline-details">
+              Designed and deployed a zero-shot semantic classification pipeline using Hugging Face Transformers to match news articles with social impact initiatives, complete with an asynchronous Python backend and embeddable web widget.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">07/2025 – 08/2025</div>
+          <div>
+            <div class="timeline-role">Data Engineering Intern</div>
+            <div class="timeline-org">Safran Landing Systems — Vélizy-Villacoublay, France</div>
+            <p class="timeline-details">
+              Automated routine technical documentation workflows using Python and Optical Character Recognition (OCR), and developed custom TypeScript / SharePoint Framework (SPFx) components connected to GitLab APIs within the Data Department.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">09/2021 – 07/2024</div>
+          <div>
+            <div class="timeline-role">Classes Préparatoires aux Grandes Écoles (CPGE MPSI / MP)</div>
+            <div class="timeline-org">Lycée Janson de Sailly &amp; Lycée Chaptal — Paris, France</div>
+            <p class="timeline-details">
+              Three-year intensive undergraduate preparation for the French national competitive entrance examinations in abstract algebra, multivariable analysis, differential equations, spectral theory, and physics. French Baccalauréat awarded with Highest Honors (<em>Mention Très Bien</em>, 2021).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TECHNICAL COMPETENCIES -->
+    <section id="competencies" class="section-block">
+      <div class="section-header">
+        <h2 class="section-title"><span class="section-num">§ 4.</span>Technical &amp; Mathematical Scope</h2>
+        <span class="section-subtitle">Core Domains &amp; Tooling</span>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-col">
+          <h3 class="matrix-title">4.1 // Machine Learning &amp; Vision</h3>
+          <ul class="matrix-list">
+            <li><strong>Deep Learning &amp; NLP:</strong> Transformers, Zero-Shot NLI, LoRA/PEFT, Multimodal Embeddings, Hugging Face.</li>
+            <li><strong>Computer Vision:</strong> CNNs, Vision Transformers (ViT), Self-Supervised Learning (DINO), Object Detection, OCR.</li>
+            <li><strong>Scientific Stack:</strong> PyTorch, torchvision, scikit-learn, OpenCV, NumPy, SciPy, pandas, librosa.</li>
+          </ul>
+        </div>
+
+        <div class="matrix-col">
+          <h3 class="matrix-title">4.2 // Mathematical Foundations</h3>
+          <ul class="matrix-list">
+            <li><strong>Continuous Optimization:</strong> Convex analysis, proximal splitting (ISTA/FISTA), stochastic gradient dynamics.</li>
+            <li><strong>Statistical Learning Theory:</strong> Empirical risk minimization, concentration inequalities, generalization bounds.</li>
+            <li><strong>Signal &amp; Streams:</strong> Online learning, data stream mining, digital modulation (QPSK), acoustic DSP.</li>
+          </ul>
+        </div>
+
+        <div class="matrix-col">
+          <h3 class="matrix-title">4.3 // Systems &amp; Software</h3>
+          <ul class="matrix-list">
+            <li><strong>Languages:</strong> Python (Proficient), Dart / Flutter (Proficient), TypeScript / JS, C++ (Embedded/Robotics), SQL.</li>
+            <li><strong>Architecture &amp; Web:</strong> FastAPI, Next.js, React, Puppeteer MCP, REST APIs, Hive/Isar NoSQL.</li>
+            <li><strong>Infrastructure:</strong> Linux, Git, Docker, Nginx, CI/CD Release Pipelines, Reverse Engineering.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>
+        &copy; 2026 Josselin Robert (JsonLines) &bull; École Polytechnique &amp; Télécom SudParis
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/JsonLinesCode" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/josselin-robert" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://reactif.app" target="_blank" rel="noopener">Reactif</a>
+        <a href="https://archive.ynotes.fr" target="_blank" rel="noopener">yNotes Archive</a>
+        <a href="mailto:josselin.robert@polytechnique.edu">Contact</a>
+      </div>
+    </footer>
+
+  </main>
+
 </body>
 
 </html>
