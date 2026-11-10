@@ -76,23 +76,18 @@ body {
   display: block;
 }
 
-/* Floating Post-It on the right of the avatar head */
+/* Post-It isolated on the right */
 .post-it-note {
   position: absolute;
-  left: calc(50% + 62px);
-  top: -54px;
+  left: calc(50% + 175px);
+  top: 15px;
   width: 228px;
   height: 216px;
   background: url('./src/postit.png') center / contain no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: postItFloat 4.5s ease-in-out infinite;
   z-index: 5;
-}
-
-.post-it-note:hover {
-  transform: translateY(-3px) scale(1.02);
 }
 
 .post-it-content {
@@ -129,15 +124,6 @@ body {
 
 .post-it-list li:last-child {
   margin-bottom: 0;
-}
-
-@keyframes postItFloat {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
 }
 
 .wordle-board {
