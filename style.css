@@ -504,6 +504,84 @@ body {
   box-shadow: 0 4px 14px rgba(26, 46, 76, 0.06);
 }
 
+/* Reactif Card: Medical Cyan / Electric Blue theme gradient */
+.project-card.card-reactif {
+  background: linear-gradient(145deg, #f0f7ff 0%, #e2efff 65%, #d4e7fe 100%);
+  border-color: #bad6fa;
+}
+
+.project-card.card-reactif:hover {
+  border-color: #007dff;
+  box-shadow: 0 6px 18px rgba(0, 125, 255, 0.14);
+}
+
+.project-card.card-reactif .project-title {
+  color: #004b99;
+}
+
+.project-card.card-reactif .project-desc {
+  color: #1e3a5f;
+}
+
+.project-card.card-reactif .project-date-label {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-color: #b3d4fc;
+  color: #0066cc;
+}
+
+.project-card.card-reactif .project-footer {
+  border-top-color: #bad6fa;
+}
+
+.project-card.card-reactif .tech-tag {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #004b99;
+}
+
+.project-card.card-reactif .project-link {
+  color: #0066cc;
+  font-weight: 500;
+}
+
+/* yNotes Card: Midnight Indigo & Violet gradient */
+.project-card.card-ynotes {
+  background: linear-gradient(145deg, #f4f4fa 0%, #ebebf7 60%, #dedef0 100%);
+  border-color: #cfd0e6;
+}
+
+.project-card.card-ynotes:hover {
+  border-color: #4a4b8f;
+  box-shadow: 0 6px 18px rgba(24, 36, 95, 0.12);
+}
+
+.project-card.card-ynotes .project-title {
+  color: #18245f;
+}
+
+.project-card.card-ynotes .project-desc {
+  color: #272c4e;
+}
+
+.project-card.card-ynotes .project-date-label {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-color: #c9cae3;
+  color: #18245f;
+}
+
+.project-card.card-ynotes .project-footer {
+  border-top-color: #cfd0e6;
+}
+
+.project-card.card-ynotes .tech-tag {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #18245f;
+}
+
+.project-card.card-ynotes .project-link {
+  color: #18245f;
+  font-weight: 500;
+}
+
 .project-card.hidden {
   display: none;
 }
