@@ -179,7 +179,41 @@ body {
   font-style: italic;
   font-size: 0.95rem;
   color: var(--text-muted);
+  margin-bottom: 1.15rem;
+}
+
+.about-me-box {
   margin-bottom: 1.4rem;
+  text-align: left;
+  display: inline-block;
+}
+
+.about-me-title {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.about-me-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+}
+
+.about-me-list li {
+  margin-bottom: 0.15rem;
+}
+
+.inline-link {
+  color: var(--accent-navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inline-link:hover {
+  color: var(--text-primary);
 }
 
 .hero-actions {
