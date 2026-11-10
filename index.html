@@ -28,7 +28,17 @@
 
     <!-- CENTERED TOP HERO & WORDLE ANIMATION -->
     <section class="hero-centered">
-      <img class="avatar-img" src="src/avatar.png" alt="Josselin Robert">
+      <div class="avatar-stage">
+        <img class="avatar-img" src="src/avatar.png" alt="Josselin Robert">
+        <aside class="post-it-note" aria-label="About me">
+          <span class="post-it-tape"></span>
+          <ul class="post-it-list">
+            <li>I love playing Wordle</li>
+            <li>I love <a href="https://www.strava.com/athletes/json_lines" target="_blank" rel="noopener" class="inline-link">running</a></li>
+            <li>I can play piano too :)</li>
+          </ul>
+        </aside>
+      </div>
 
       <div id="wordle-board" class="wordle-board">
         <div class="lettersrow">
@@ -91,15 +101,6 @@
         Why jsonlines everywhere? JSON is the first data format I've heard of and love using. Also, and maybe in the first place, it's a nearly perfect anagram of my real name.
       </p>
 
-      <div class="about-me-box">
-        <div class="about-me-title">About Me</div>
-        <ul class="about-me-list">
-          <li>I love playing Wordle</li>
-          <li>I love <a href="https://www.strava.com/athletes/json_lines" target="_blank" rel="noopener" class="inline-link">running</a></li>
-          <li>I can play piano too :)</li>
-        </ul>
-      </div>
-
       <div class="hero-actions">
         <a href="./cv.pdf" target="_blank" rel="noopener" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
@@ -123,7 +124,7 @@
       </div>
     </section>
 
-    <!-- SELECTED PROJECTS -->
+    <!-- SELECTED PROJECTS (ZIGZAG TIMELINE) -->
     <section id="projects" class="section-block">
       <div class="section-header">
         <h2 class="section-title">Selected Projects</h2>
@@ -135,146 +136,17 @@
         <button type="button" class="filter-btn" data-filter="systems">Systems &amp; Open Source</button>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-zigzag" id="projects-zigzag">
+        <svg id="zigzag-svg" class="zigzag-svg" aria-hidden="true">
+          <path id="zigzag-path" d="" />
+        </svg>
 
-        <!-- Sentinel -->
-        <article class="project-card" data-category="ai systems">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <h3 class="project-title">Sentinel</h3>
-            </div>
-            <p class="project-desc">
-              Puppeteer automation and Model Context Protocol (MCP) framework that records browser interactions, generalizes them into YAML extraction schemas via LLMs, and self-repairs broken selectors.
-            </p>
+        <!-- November 2026: TensorTonic & M2DS Mathematical ML -->
+        <article class="project-card zigzag-left" data-category="ai">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">November 2026</span>
           </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Puppeteer</span>
-              <span class="tech-tag">MCP</span>
-              <span class="tech-tag">LLMs</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JsonLinesCode" target="_blank" rel="noopener" class="project-link">GitHub &rarr;</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Travel Manager (Hackathon X-IA 2026) -->
-        <article class="project-card" data-category="ai">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <h3 class="project-title">Travel Manager — Hackathon X-IA 2026</h3>
-            </div>
-            <p class="project-desc">
-              Multi-agent B2B travel orchestrator built at the École Polytechnique AI Hackathon, combining OpenAI structured extraction, live travel quotes, multi-calendar constraint satisfaction, and disruption recovery.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">OpenAI API</span>
-              <span class="tech-tag">Next.js</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JsonLinesCode/hackathon_x_ia_2026" target="_blank" rel="noopener" class="project-link">Repository &rarr;</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Reactif -->
-        <article class="project-card" data-category="systems">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <img src="src/reactif_icon.png" alt="Reactif" class="project-icon">
-              <h3 class="project-title">Reactif</h3>
-            </div>
-            <p class="project-desc">
-              Offline-first mobile cognitive aid and real-time clinical timekeeper for cardiopulmonary resuscitation (CPR) used by emergency medical teams (SAMU, SMUR).
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">Mobile</span>
-              <span class="tech-tag">Offline-First</span>
-              <span class="tech-tag">CI/CD</span>
-            </div>
-            <div class="project-links">
-              <a href="https://reactif.app" target="_blank" rel="noopener" class="project-link">reactif.app &rarr;</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- yNotes -->
-        <article class="project-card" data-category="systems">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <img src="src/yn_icon.png" alt="yNotes" class="project-icon">
-              <h3 class="project-title">yNotes</h3>
-            </div>
-            <p class="project-desc">
-              Open-source mobile student life and grade-tracking client for French academic portals (Pronote, École Directe), scaling to over 10,000 downloads on iOS and Android.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">Dart</span>
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Reverse Engineering</span>
-            </div>
-            <div class="project-links">
-              <a href="https://archive.ynotes.fr" target="_blank" rel="noopener" class="project-link">archive.ynotes.fr &rarr;</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Better Group Zero-Shot Semantic Engine -->
-        <article class="project-card" data-category="ai">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <h3 class="project-title">Zero-Shot Semantic Recommendation Engine</h3>
-            </div>
-            <p class="project-desc">
-              End-to-end NLP classification pipeline using Hugging Face Transformers and FastAPI to match live news articles with social impact initiatives in real time.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Hugging Face</span>
-              <span class="tech-tag">FastAPI</span>
-            </div>
-            <div class="project-links">
-              <span class="project-link">Better Group</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Safran OCR Pipeline & GitLab SPFx WebPart -->
-        <article class="project-card" data-category="ai systems">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <h3 class="project-title">Industrial OCR Pipeline &amp; Safran Git WebPart</h3>
-            </div>
-            <p class="project-desc">
-              Automated Python OCR pipeline for aeronautical maintenance documentation and custom TypeScript SharePoint Framework component connected to GitLab APIs at Safran Landing Systems.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">OCR</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">SPFx</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JsonLinesCode/safran-git-webpart" target="_blank" rel="noopener" class="project-link">Repository &rarr;</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- TensorTonic & M2DS Mathematical ML -->
-        <article class="project-card" data-category="ai">
           <div class="project-card-top">
             <div class="project-header-row">
               <h3 class="project-title">TensorTonic &amp; M2DS ML Implementations</h3>
@@ -296,8 +168,174 @@
           </div>
         </article>
 
-        <!-- Computer Vision, Thermal Imaging & Autonomous Robotics -->
-        <article class="project-card" data-category="ai">
+        <!-- September 2026: Travel Manager (Hackathon X-IA 2026) -->
+        <article class="project-card zigzag-right" data-category="ai">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">September 2026</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <h3 class="project-title">Travel Manager — Hackathon X-IA 2026</h3>
+            </div>
+            <p class="project-desc">
+              Multi-agent B2B travel orchestrator built at the École Polytechnique AI Hackathon, combining OpenAI structured extraction, live travel quotes, multi-calendar constraint satisfaction, and disruption recovery.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">OpenAI API</span>
+              <span class="tech-tag">Next.js</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/hackathon_x_ia_2026" target="_blank" rel="noopener" class="project-link">Repository &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- July 2026: Sentinel -->
+        <article class="project-card zigzag-left" data-category="ai systems">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">July 2026</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <h3 class="project-title">Sentinel</h3>
+            </div>
+            <p class="project-desc">
+              Puppeteer automation and Model Context Protocol (MCP) framework that records browser interactions, generalizes them into YAML extraction schemas via LLMs, and self-repairs broken selectors.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Puppeteer</span>
+              <span class="tech-tag">MCP</span>
+              <span class="tech-tag">LLMs</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode" target="_blank" rel="noopener" class="project-link">GitHub &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- June 2026: Better Group Zero-Shot Semantic Engine -->
+        <article class="project-card zigzag-right" data-category="ai">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">June 2026</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <h3 class="project-title">Zero-Shot Semantic Recommendation Engine</h3>
+            </div>
+            <p class="project-desc">
+              End-to-end NLP classification pipeline using Hugging Face Transformers and FastAPI to match live news articles with social impact initiatives in real time.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Hugging Face</span>
+              <span class="tech-tag">FastAPI</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link">Better Group</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- February 2026: Reactif -->
+        <article class="project-card zigzag-left" data-category="systems">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">February 2026</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <img src="src/reactif_icon.png" alt="Reactif" class="project-icon">
+              <h3 class="project-title">Reactif</h3>
+            </div>
+            <p class="project-desc">
+              Offline-first mobile cognitive aid and real-time clinical timekeeper for cardiopulmonary resuscitation (CPR) used by emergency medical teams (SAMU, SMUR).
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Mobile</span>
+              <span class="tech-tag">Offline-First</span>
+              <span class="tech-tag">CI/CD</span>
+            </div>
+            <div class="project-links">
+              <a href="https://reactif.app" target="_blank" rel="noopener" class="project-link">reactif.app &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- January 2026: Flutter 3D & High-Availability Systems -->
+        <article class="project-card zigzag-right" data-category="systems">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">January 2026</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <img src="src/apollo_icon.png" alt="Flutter 3D &amp; Tooling" class="project-icon">
+              <h3 class="project-title">Flutter 3D Rendering &amp; High-Availability Cluster</h3>
+            </div>
+            <p class="project-desc">
+              Open-source Flutter packages for interactive 3D model rendering (GLB/GLTF/OBJ), rounded canvas text, CMake study time tracking, and a containerized Nginx/Flask load-balanced cluster.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Nginx</span>
+              <span class="tech-tag">CMake</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/flutter_3d_controller" target="_blank" rel="noopener" class="project-link">flutter_3d &rarr;</a>
+              <a href="https://github.com/JsonLinesCode/NET4255" target="_blank" rel="noopener" class="project-link">NET4255 &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- July 2025: Safran OCR Pipeline & GitLab SPFx WebPart -->
+        <article class="project-card zigzag-left" data-category="ai systems">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">July 2025</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <h3 class="project-title">Industrial OCR Pipeline &amp; Safran Git WebPart</h3>
+            </div>
+            <p class="project-desc">
+              Automated Python OCR pipeline for aeronautical maintenance documentation and custom TypeScript SharePoint Framework component connected to GitLab APIs at Safran Landing Systems.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OCR</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">SPFx</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/JsonLinesCode/safran-git-webpart" target="_blank" rel="noopener" class="project-link">Repository &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- June 2024: Computer Vision, Thermal Imaging & Autonomous Robotics -->
+        <article class="project-card zigzag-right" data-category="ai">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">June 2024</span>
+          </div>
           <div class="project-card-top">
             <div class="project-header-row">
               <h3 class="project-title">Thermal Vision, Signal Processing &amp; Robotics</h3>
@@ -318,8 +356,39 @@
           </div>
         </article>
 
-        <!-- Academic Protocol SDKs -->
-        <article class="project-card" data-category="systems">
+        <!-- July 2022: yNotes -->
+        <article class="project-card zigzag-left" data-category="systems">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">July 2022</span>
+          </div>
+          <div class="project-card-top">
+            <div class="project-header-row">
+              <img src="src/yn_icon.png" alt="yNotes" class="project-icon">
+              <h3 class="project-title">yNotes</h3>
+            </div>
+            <p class="project-desc">
+              Open-source mobile student life and grade-tracking client for French academic portals (Pronote, École Directe), scaling to over 10,000 downloads on iOS and Android.
+            </p>
+          </div>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Reverse Engineering</span>
+            </div>
+            <div class="project-links">
+              <a href="https://archive.ynotes.fr" target="_blank" rel="noopener" class="project-link">archive.ynotes.fr &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- June 2021: Academic Protocol SDKs -->
+        <article class="project-card zigzag-right" data-category="systems">
+          <div class="project-date-node">
+            <span class="timeline-dot"></span>
+            <span class="project-date-label">June 2021</span>
+          </div>
           <div class="project-card-top">
             <div class="project-header-row">
               <h3 class="project-title">Pronote QR-Auth Decoder &amp; ÉcoleDirecte.js</h3>
@@ -337,31 +406,6 @@
             <div class="project-links">
               <a href="https://github.com/JsonLinesCode/pronote-qrcode-api" target="_blank" rel="noopener" class="project-link">pronote-qr &rarr;</a>
               <a href="https://github.com/JsonLinesCode/ecoledirecte.js" target="_blank" rel="noopener" class="project-link">ecoledirecte.js &rarr;</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Flutter 3D & High-Availability Systems -->
-        <article class="project-card" data-category="systems">
-          <div class="project-card-top">
-            <div class="project-header-row">
-              <img src="src/apollo_icon.png" alt="Flutter 3D &amp; Tooling" class="project-icon">
-              <h3 class="project-title">Flutter 3D Rendering &amp; High-Availability Cluster</h3>
-            </div>
-            <p class="project-desc">
-              Open-source Flutter packages for interactive 3D model rendering (GLB/GLTF/OBJ), rounded canvas text, CMake study time tracking, and a containerized Nginx/Flask load-balanced cluster.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Nginx</span>
-              <span class="tech-tag">CMake</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JsonLinesCode/flutter_3d_controller" target="_blank" rel="noopener" class="project-link">flutter_3d &rarr;</a>
-              <a href="https://github.com/JsonLinesCode/NET4255" target="_blank" rel="noopener" class="project-link">NET4255 &rarr;</a>
             </div>
           </div>
         </article>
