@@ -538,6 +538,12 @@ body {
   color: #004b99;
 }
 
+.project-card.card-reactif .tech-tag:first-child {
+  background-color: #0056ae;
+  color: #ffffff;
+  font-weight: 500;
+}
+
 .project-card.card-reactif .project-link {
   color: #0066cc;
   font-weight: 500;
