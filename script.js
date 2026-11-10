@@ -167,35 +167,6 @@
       };
     });
 
-    // Entry tail into the oldest card (last item)
-    var last = rects[rects.length - 1];
-    if (last) {
-      var tailSide = last.col === 2 ? 1 : -1;
-      var tx1 = last.col === 2 ? last.right : last.left;
-      var ty1 = last.midY;
-      var tx0 = tx1 + tailSide * 10;
-      var ty0 = last.bottom + 18;
-      var tc1 = { x: tx1 + tailSide * 44, y: ty0 - 4 };
-      var tc2 = { x: tx1 + tailSide * 44, y: ty1 };
-      d +=
-        " M " +
-        tx0.toFixed(1) +
-        " " +
-        ty0.toFixed(1) +
-        " C " +
-        tc1.x.toFixed(1) +
-        " " +
-        tc1.y.toFixed(1) +
-        ", " +
-        tc2.x.toFixed(1) +
-        " " +
-        tc2.y.toFixed(1) +
-        ", " +
-        tx1.toFixed(1) +
-        " " +
-        ty1.toFixed(1);
-    }
-
     // Connect from oldest (k) up to newest (k - 1)
     for (var k = rects.length - 1; k >= 1; k--) {
       var cur = rects[k];
@@ -211,40 +182,52 @@
         var hAngle = Math.atan2(0, hx1 - hx0);
         arrowD += makeArrow(hMidX, hy, hAngle);
       } else {
-        // Outer U-turn arc on the right (col 2) or left (col 1) connecting row r up to row r - 1
+        // Compact rounded-corner U-turn on the right (col 2) or left (col 1) connecting row r up to row r - 1
         var isRightOuter = cur.col === 2;
+        var sign = isRightOuter ? 1 : -1;
         var ux0 = isRightOuter ? cur.right : cur.left;
         var uy0 = cur.midY;
         var ux1 = isRightOuter ? prev.right : prev.left;
         var uy1 = prev.midY;
-        var bulge = isRightOuter ? 54 : -54;
-        var uc1 = { x: ux0 + bulge, y: uy0 };
-        var uc2 = { x: ux1 + bulge, y: uy1 };
+        var outerX = (isRightOuter ? Math.max(ux0, ux1) : Math.min(ux0, ux1)) + sign * 24;
+        var rad = 14;
 
         d +=
           " M " +
           ux0.toFixed(1) +
           " " +
           uy0.toFixed(1) +
-          " C " +
-          uc1.x.toFixed(1) +
+          " L " +
+          (outerX - sign * rad).toFixed(1) +
           " " +
-          uc1.y.toFixed(1) +
-          ", " +
-          uc2.x.toFixed(1) +
+          uy0.toFixed(1) +
+          " Q " +
+          outerX.toFixed(1) +
           " " +
-          uc2.y.toFixed(1) +
-          ", " +
+          uy0.toFixed(1) +
+          " " +
+          outerX.toFixed(1) +
+          " " +
+          (uy0 - rad).toFixed(1) +
+          " L " +
+          outerX.toFixed(1) +
+          " " +
+          (uy1 + rad).toFixed(1) +
+          " Q " +
+          outerX.toFixed(1) +
+          " " +
+          uy1.toFixed(1) +
+          " " +
+          (outerX - sign * rad).toFixed(1) +
+          " " +
+          uy1.toFixed(1) +
+          " L " +
           ux1.toFixed(1) +
           " " +
           uy1.toFixed(1);
 
-        var p0 = { x: ux0, y: uy0 };
-        var p1 = { x: ux1, y: uy1 };
-        var midPt = bezierPoint(p0, uc1, uc2, p1, 0.5);
-        var midTan = bezierTangent(p0, uc1, uc2, p1, 0.5);
-        var uAngle = Math.atan2(midTan.dy, midTan.dx);
-        arrowD += makeArrow(midPt.x, midPt.y, uAngle);
+        var midYVert = (uy0 + uy1) / 2;
+        arrowD += makeArrow(outerX, midYVert, -Math.PI / 2);
       }
     }
 
