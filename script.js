@@ -42,6 +42,7 @@
     var container = document.getElementById("projects-zigzag");
     var svg = document.getElementById("zigzag-svg");
     var path = document.getElementById("zigzag-path");
+    var arrowsPath = document.getElementById("zigzag-arrows");
     if (!container || !svg || !path) return;
 
     var visibleCards = container.querySelectorAll(".project-card:not(.hidden)");
@@ -66,14 +67,54 @@
 
     if (points.length < 2) {
       path.setAttribute("d", "");
+      if (arrowsPath) arrowsPath.setAttribute("d", "");
       return;
     }
 
     var d = "M " + points[0].x.toFixed(1) + " " + points[0].y.toFixed(1);
+    var arrowD = "";
+    var arrowLen = 5.5;
+    var arrowSpread = Math.PI / 6;
+
     for (var p = 1; p < points.length; p++) {
-      d += " L " + points[p].x.toFixed(1) + " " + points[p].y.toFixed(1);
+      var p0 = points[p - 1];
+      var p1 = points[p];
+      d += " L " + p1.x.toFixed(1) + " " + p1.y.toFixed(1);
+
+      var dx = p1.x - p0.x;
+      var dy = p1.y - p0.y;
+      var dist = Math.hypot(dx, dy);
+      var angle = Math.atan2(dy, dx);
+
+      var fractions = dist > 110 ? [0.36, 0.68] : [0.52];
+      for (var f = 0; f < fractions.length; f++) {
+        var t = fractions[f];
+        var ax = p0.x + dx * t;
+        var ay = p0.y + dy * t;
+        var lx = ax - arrowLen * Math.cos(angle - arrowSpread);
+        var ly = ay - arrowLen * Math.sin(angle - arrowSpread);
+        var rx = ax - arrowLen * Math.cos(angle + arrowSpread);
+        var ry = ay - arrowLen * Math.sin(angle + arrowSpread);
+        arrowD +=
+          " M " +
+          lx.toFixed(1) +
+          " " +
+          ly.toFixed(1) +
+          " L " +
+          ax.toFixed(1) +
+          " " +
+          ay.toFixed(1) +
+          " L " +
+          rx.toFixed(1) +
+          " " +
+          ry.toFixed(1);
+      }
     }
+
     path.setAttribute("d", d);
+    if (arrowsPath) {
+      arrowsPath.setAttribute("d", arrowD);
+    }
   }
 
   function initFilters() {
