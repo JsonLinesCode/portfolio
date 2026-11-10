@@ -218,7 +218,97 @@ body {
   font-weight: 500;
   line-height: 1.2;
   color: var(--text-primary);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.status-badge-container {
+  margin-bottom: 0.65rem;
+  position: relative;
+  display: inline-block;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #0a66c2;
+  background-color: rgba(10, 102, 194, 0.08);
+  border: 1px solid rgba(10, 102, 194, 0.28);
+  padding: 0.22rem 0.65rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.status-badge:hover,
+.status-badge:focus {
+  background-color: #0a66c2;
+  color: #ffffff;
+  border-color: #0a66c2;
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.25);
+}
+
+.status-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #0a66c2;
+  transition: background-color 0.2s ease;
+}
+
+.status-badge:hover .status-badge-dot,
+.status-badge:focus .status-badge-dot {
+  background-color: #ffffff;
+}
+
+.status-badge-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  width: 290px;
+  background-color: #1b1f24;
+  color: #f0f3f6;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  text-align: center;
+}
+
+.status-badge-tooltip strong {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.status-badge-tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #1b1f24 transparent;
+}
+
+.status-badge:hover .status-badge-tooltip,
+.status-badge:focus .status-badge-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .hero-affiliation {
@@ -228,8 +318,10 @@ body {
 }
 
 .hero-bio {
-  font-size: 1.02rem;
-  color: var(--text-secondary);
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.55;
   margin-bottom: 0.85rem;
 }
 
