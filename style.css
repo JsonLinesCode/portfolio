@@ -330,8 +330,18 @@ body {
 .hero-bio {
   font-size: 1.02rem;
   color: var(--text-secondary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
   text-align: justify;
+}
+
+.hero-etymology {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  border-left: 2px solid var(--wordle-green);
+  padding: 0.55rem 0.85rem;
+  margin-bottom: 1.15rem;
 }
 
 .hero-actions {
