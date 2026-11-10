@@ -79,47 +79,52 @@ body {
 /* Floating Post-It on the right of the avatar head */
 .post-it-note {
   position: absolute;
-  left: calc(50% + 66px);
-  top: -8px;
-  width: 215px;
-  background: linear-gradient(165deg, #fff9c4 0%, #fef08a 100%);
-  border: 1px solid #e5d36e;
-  padding: 0.7rem 0.85rem 0.65rem;
-  box-shadow: 3px 6px 14px rgba(24, 24, 27, 0.12);
-  transform: rotate(2.5deg);
-  text-align: left;
-  border-radius: 2px;
+  left: calc(50% + 62px);
+  top: -54px;
+  width: 228px;
+  height: 216px;
+  background: url('./src/postit.png') center / contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: postItFloat 4.5s ease-in-out infinite;
   z-index: 5;
 }
 
 .post-it-note:hover {
-  transform: rotate(0.5deg) translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
 }
 
-.post-it-tape {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-1.5deg);
-  width: 58px;
-  height: 15px;
-  background-color: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(200, 190, 140, 0.45);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+.post-it-content {
+  font-family: 'Caveat', cursive;
+  transform: rotate(-4.5deg);
+  padding: 24px 22px 10px;
+  text-align: center;
+  color: #242014;
+  width: 100%;
+}
+
+.post-it-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  color: #1c1910;
 }
 
 .post-it-list {
-  list-style: disc;
-  padding-left: 1.1rem;
+  list-style: none;
+  padding: 0;
   margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.42;
-  color: #2c2818;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.24;
+  color: #262216;
+  text-align: center;
 }
 
 .post-it-list li {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.12rem;
 }
 
 .post-it-list li:last-child {
@@ -128,10 +133,10 @@ body {
 
 @keyframes postItFloat {
   0%, 100% {
-    transform: rotate(2.5deg) translateY(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: rotate(3.2deg) translateY(-4px);
+    transform: translateY(-5px);
   }
 }
 
@@ -678,7 +683,8 @@ body {
     position: relative;
     left: auto;
     top: auto;
-    width: 220px;
+    width: 228px;
+    height: 216px;
   }
 
   .projects-zigzag {
