@@ -76,34 +76,67 @@
     var arrowLen = 5.5;
     var arrowSpread = Math.PI / 6;
 
+    function bezierPoint(p0, c1, c2, p1, t) {
+      var u = 1 - t;
+      var tt = t * t;
+      var uu = u * u;
+      var uuu = uu * u;
+      var ttt = tt * t;
+      return {
+        x: uuu * p0.x + 3 * uu * t * c1.x + 3 * u * tt * c2.x + ttt * p1.x,
+        y: uuu * p0.y + 3 * uu * t * c1.y + 3 * u * tt * c2.y + ttt * p1.y
+      };
+    }
+
+    function bezierTangent(p0, c1, c2, p1, t) {
+      var u = 1 - t;
+      return {
+        dx: 3 * u * u * (c1.x - p0.x) + 6 * u * t * (c2.x - c1.x) + 3 * t * t * (p1.x - c2.x),
+        dy: 3 * u * u * (c1.y - p0.y) + 6 * u * t * (c2.y - c1.y) + 3 * t * t * (p1.y - c2.y)
+      };
+    }
+
     for (var p = 1; p < points.length; p++) {
       var p0 = points[p - 1];
       var p1 = points[p];
-      d += " L " + p1.x.toFixed(1) + " " + p1.y.toFixed(1);
-
-      var dx = p1.x - p0.x;
       var dy = p1.y - p0.y;
-      var dist = Math.hypot(dx, dy);
-      var angle = Math.atan2(dy, dx);
+      var c1 = { x: p0.x, y: p0.y + dy * 0.55 };
+      var c2 = { x: p1.x, y: p1.y - dy * 0.55 };
 
-      var fractions = dist > 110 ? [0.36, 0.68] : [0.52];
+      d +=
+        " C " +
+        c1.x.toFixed(1) +
+        " " +
+        c1.y.toFixed(1) +
+        ", " +
+        c2.x.toFixed(1) +
+        " " +
+        c2.y.toFixed(1) +
+        ", " +
+        p1.x.toFixed(1) +
+        " " +
+        p1.y.toFixed(1);
+
+      var dist = Math.hypot(p1.x - p0.x, p1.y - p0.y);
+      var fractions = dist > 110 ? [0.35, 0.68] : [0.5];
       for (var f = 0; f < fractions.length; f++) {
         var t = fractions[f];
-        var ax = p0.x + dx * t;
-        var ay = p0.y + dy * t;
-        var lx = ax - arrowLen * Math.cos(angle - arrowSpread);
-        var ly = ay - arrowLen * Math.sin(angle - arrowSpread);
-        var rx = ax - arrowLen * Math.cos(angle + arrowSpread);
-        var ry = ay - arrowLen * Math.sin(angle + arrowSpread);
+        var pt = bezierPoint(p0, c1, c2, p1, t);
+        var tan = bezierTangent(p0, c1, c2, p1, t);
+        var angle = Math.atan2(tan.dy, tan.dx);
+        var lx = pt.x - arrowLen * Math.cos(angle - arrowSpread);
+        var ly = pt.y - arrowLen * Math.sin(angle - arrowSpread);
+        var rx = pt.x - arrowLen * Math.cos(angle + arrowSpread);
+        var ry = pt.y - arrowLen * Math.sin(angle + arrowSpread);
         arrowD +=
           " M " +
           lx.toFixed(1) +
           " " +
           ly.toFixed(1) +
           " L " +
-          ax.toFixed(1) +
+          pt.x.toFixed(1) +
           " " +
-          ay.toFixed(1) +
+          pt.y.toFixed(1) +
           " L " +
           rx.toFixed(1) +
           " " +
