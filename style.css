@@ -381,14 +381,14 @@ body {
   border-color: var(--accent-navy);
 }
 
-/* --- 2-Column Grid with Zigzag Center Path --- */
+/* --- 2-Column Snake Grid with Outer U-Turn Loops --- */
 .projects-zigzag {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 7.5rem;
-  row-gap: 1.4rem;
-  padding: 0.5rem 0;
+  column-gap: 3.6rem;
+  row-gap: 2.1rem;
+  padding: 0.5rem 2.6rem;
 }
 
 .zigzag-svg {
@@ -409,16 +409,16 @@ body {
   stroke-dasharray: 1 8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.65;
+  opacity: 0.68;
 }
 
 #zigzag-arrows {
   fill: none;
   stroke: var(--accent-navy);
-  stroke-width: 1.8px;
+  stroke-width: 2px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .project-card {
@@ -428,7 +428,7 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: 10px;
-  padding: 1.25rem 1.35rem;
+  padding: 1.15rem 1.35rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -444,30 +444,16 @@ body {
   display: none;
 }
 
-/* Date Node & Dot on the Zigzag Path */
+/* Top-Left Date Badge inside each Card (and Dot for Mobile Vertical Axis) */
 .project-date-node {
-  position: absolute;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  z-index: 3;
-  white-space: nowrap;
-}
-
-.project-card.zigzag-left .project-date-node {
-  top: 26%;
-  left: calc(100% + 10px);
-  flex-direction: row;
-}
-
-.project-card.zigzag-right .project-date-node {
-  top: 74%;
-  right: calc(100% + 10px);
-  flex-direction: row-reverse;
+  margin-bottom: 0.5rem;
 }
 
 .timeline-dot {
+  display: none;
   width: 11px;
   height: 11px;
   border-radius: 50%;
@@ -481,8 +467,8 @@ body {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--accent-navy);
-  background-color: var(--bg-page);
-  padding: 0.12rem 0.4rem;
+  background-color: var(--bg-subtle);
+  padding: 0.14rem 0.48rem;
   border: 1px solid var(--border-light);
   border-radius: 4px;
 }
@@ -677,7 +663,7 @@ body {
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 1.25rem;
-    padding-left: 28px;
+    padding: 0.5rem 0 0.5rem 28px;
   }
 
   .project-card,
@@ -686,19 +672,13 @@ body {
     width: 100%;
   }
 
-  .project-card.zigzag-left .project-date-node,
-  .project-card.zigzag-right .project-date-node {
+  .project-date-node {
     position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    transform: none;
-    flex-direction: row;
     margin-bottom: 0.55rem;
   }
 
-  .project-card.zigzag-left .timeline-dot,
-  .project-card.zigzag-right .timeline-dot {
+  .timeline-dot {
+    display: block;
     position: absolute;
     left: -45px;
     top: 50%;
